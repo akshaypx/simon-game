@@ -54,6 +54,9 @@ function animatePress(abcd) {
 $(document).keypress(function () {
   if (level === 0) nextSequence();
 });
+$(".starting").click(function () {
+  if (level === 0) nextSequence();
+});
 
 function checkAnswer(currentLevel) {
   if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
@@ -67,7 +70,7 @@ function checkAnswer(currentLevel) {
     setTimeout(function () {
       $("body").removeClass("game-over");
     }, 200);
-    $("h1").text("Game Over, Press Any Key To Restart");
+    $("h1").text("Game Over, Press Any/Start Key To Restart");
     startOver();
   }
 }
